@@ -1,0 +1,69 @@
+{
+  "personal": {
+    "name": "Eugene Chekan",
+    "title": "Software Developer (in Test)",
+    "about": "I am a passionate software developer with expertise in [Your Specialties]. I love creating efficient, scalable solutions and am always eager to learn new technologies.",
+    "email": "eugene.chekan@gmail.com",
+    "phone": "+48452535418",
+    "location": "Warsaw, Poland",
+    "social": {
+      "github": "https://github.com/eugene-chekan",
+      "linkedin": "https://linkedin.com/in/eugene-chekan"
+    }
+  },
+  "education": [
+    {
+      "university": "European Humanitarian University",
+      "degree": "Bachelor of Science in Computer Science",
+      "location": "Vilnius",
+      "country": "Lithuania",
+      "finished": "2027"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "level": "B2+"
+    },
+    {
+      "language": "Russian",
+      "level": "C2"
+    },
+    {
+      "language": "Belarusian",
+      "level": "Native"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Developer in Test",
+      "company": "EPAM Systems",
+      "period": "2022 - Present",
+      "description": "Description of your role and achievements",
+      "technologies": ["Playwright", "Python", "Robot Framework", "Pytest", "SQL", "Git", "AWS", "Postman", "Jenkins", "Jira", "Confluence"]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": ["Python", "Java", "Bash"]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "items": ["FastAPI", "Selenium", "Playwright", "Spring Boot", "Pytest", "Robot Framework", "SQLAlchemy", "Alembic", "Pydantic", "Pandas"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": ["Git", "Docker", "AWS", "Postman", "Github Actions", "PostgreSQL"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project Name",
+      "description": "Brief description of the project",
+      "technologies": ["Tech 1", "Tech 2"],
+      "link": "https://github.com/username/project",
+      "image": "path/to/image.jpg"
+    }
+  ]
+} 

@@ -1,5 +1,5 @@
-// Content population
-function populateContent() {
+// Fetch content.json and populate the page
+function populateContent(content) {
     // Populate simple text content
     document.querySelectorAll('[data-content]').forEach(element => {
         const path = element.getAttribute('data-content').split('.');
@@ -19,115 +19,128 @@ function populateContent() {
 
     // Populate experience timeline
     const timeline = document.getElementById('experience-timeline');
-    content.experience.forEach(exp => {
-        const expElement = document.createElement('div');
-        expElement.className = 'timeline-item';
-        expElement.innerHTML = `
-            <div class="timeline-content">
-                <h3>${exp.title}</h3>
-                <h4>${exp.company}</h4>
-                <p class="timeline-period">${exp.period}</p>
-                <p>${exp.description}</p>
-                <div class="technologies">
-                    ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+    if (timeline) {
+        timeline.innerHTML = '';
+        content.experience.forEach(exp => {
+            const expElement = document.createElement('div');
+            expElement.className = 'timeline-item';
+            expElement.innerHTML = `
+                <div class="timeline-content">
+                    <h3>${exp.title}</h3>
+                    <h4>${exp.company}</h4>
+                    <p class="timeline-period">${exp.period}</p>
+                    <p>${exp.description}</p>
+                    <div class="skill-items">
+                        ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
                 </div>
-            </div>
-        `;
-        timeline.appendChild(expElement);
-    });
+            `;
+            timeline.appendChild(expElement);
+        });
+    }
 
     // Populate skills grid
     const skillsGrid = document.getElementById('skills-grid');
-    content.skills.forEach(category => {
-        const categoryElement = document.createElement('div');
-        categoryElement.className = 'skill-category';
-        categoryElement.innerHTML = `
-            <h3>${category.category}</h3>
-            <div class="skill-items">
-                ${category.items.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-            </div>
-        `;
-        skillsGrid.appendChild(categoryElement);
-    });
+    if (skillsGrid) {
+        skillsGrid.innerHTML = '';
+        content.skills.forEach(category => {
+            const categoryElement = document.createElement('div');
+            categoryElement.className = 'skill-category';
+            categoryElement.innerHTML = `
+                <h3>${category.category}</h3>
+                <div class="skill-items">
+                    ${category.items.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                </div>
+            `;
+            skillsGrid.appendChild(categoryElement);
+        });
+    }
 
     // Populate projects grid
     const projectsGrid = document.getElementById('projects-grid');
-    content.projects.forEach(project => {
-        const projectElement = document.createElement('div');
-        projectElement.className = 'project-card';
-        projectElement.innerHTML = `
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="project-technologies">
-                ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-            </div>
-            <a href="${project.link}" target="_blank" class="project-link">View Project</a>
-        `;
-        projectsGrid.appendChild(projectElement);
-    });
+    if (projectsGrid) {
+        projectsGrid.innerHTML = '';
+        content.projects.forEach(project => {
+            const projectElement = document.createElement('div');
+            projectElement.className = 'project-card';
+            projectElement.innerHTML = `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="project-technologies">
+                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+                ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">View Project</a>` : ''}
+            `;
+            projectsGrid.appendChild(projectElement);
+        });
+    }
 }
 
-// Call populateContent when the DOM is loaded
-document.addEventListener('DOMContentLoaded', populateContent);
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('static/content.json')
+      .then(response => response.json())
+      .then(content => {
+        populateContent(content);
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href.length > 1 && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href && href.length > 1 && href.startsWith('#')) {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('scroll-up');
+                return;
             }
-        }
-    });
-});
+            
+            if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+                // Scroll Down
+                header.classList.remove('scroll-up');
+                header.classList.add('scroll-down');
+            } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+                // Scroll Up
+                header.classList.remove('scroll-down');
+                header.classList.add('scroll-up');
+            }
+            lastScroll = currentScroll;
+        });
 
-// Header scroll effect
-const header = document.querySelector('.header');
-let lastScroll = 0;
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        header.classList.remove('scroll-up');
-        return;
-    }
-    
-    if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-        // Scroll Down
-        header.classList.remove('scroll-up');
-        header.classList.add('scroll-down');
-    } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-        // Scroll Up
-        header.classList.remove('scroll-down');
-        header.classList.add('scroll-up');
-    }
-    lastScroll = currentScroll;
-});
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
-document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+      });
 }); 
