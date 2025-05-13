@@ -12,6 +12,8 @@ function populateContent(content) {
             element.href = value;
         } else if (element.getAttribute('data-type') === 'mailto') {
             element.href = `mailto:${value}`;
+        } else if (element.getAttribute('data-type') === 'tel') {
+            element.href = `tel:${value}`;
         } else {
             element.textContent = value;
         }
