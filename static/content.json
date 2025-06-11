@@ -1,8 +1,8 @@
 {
   "personal": {
     "name": "Eugene Chekan",
-    "title": "Software Developer (in Test)",
-    "about": "I am a passionate software developer with expertise in [Your Specialties]. I love creating efficient, scalable solutions and am always eager to learn new technologies.",
+    "title": "Software Engineer in Test",
+    "about": "Experienced Software Engineer in Test with 4+ years of expertise in test automation, embedded systems, and quality engineering. Passionate about building robust testing frameworks and automation solutions for complex IoT, healthcare, and telecommunications projects. Proven track record of implementing custom testing tools, enhancing CI/CD pipelines, and delivering high-quality software solutions across diverse technical domains. Self-motivated problem solver with strong analytical skills and a keen eye for detail.",
     "email": "eugene.chekan@gmail.com",
     "phone": "+48452535418",
     "location": "Warsaw, Poland",
@@ -26,21 +26,49 @@
       "level": "B2+"
     },
     {
-      "language": "Russian",
-      "level": "C2"
-    },
-    {
       "language": "Belarusian",
       "level": "Native"
+    },
+    {
+      "language": "Russian",
+      "level": "C2"
     }
   ],
   "experience": [
     {
-      "title": "Software Developer in Test",
-      "company": "EPAM Systems",
-      "period": "2022 - Present",
-      "description": "Description of your role and achievements",
-      "technologies": ["Playwright", "Python", "Robot Framework", "Pytest", "SQL", "Git", "AWS", "Postman", "Jenkins", "Jira", "Confluence"]
+      "title": "Software Test Automation Engineer",
+      "company": "EPAM Systems (Cigna Corporation)",
+      "period": "Feb 2024 - May 2025",
+      "description": "Led end-to-end testing for Dedicated Medicare Operating Model (DMOM) migration across 5 value streams. Enhanced testing framework with custom Robot Framework libraries and automated complex enrollment scenarios.",
+      "technologies": ["PostgreSQL", "Microsoft SQL Server", "AWS", "SQLAlchemy", "Robot Framework", "Boto3", "Python", "REST API", "Playwright"]
+    },
+    {
+      "title": "Software Test Automation Engineer",
+      "company": "EPAM Systems (Verizon Communications)",
+      "period": "May 2023 - Feb 2024",
+      "description": "Developed test automation for Intelligent Lighting system for smart city infrastructure. Created automated test cases, maintained project backlog, and investigated field device issues with IoT devices.",
+      "technologies": ["Jenkins", "Wireshark", "qTest", "Git", "Linux", "Docker", "Pytest", "Python", "LWM2M", "CoAP"]
+    },
+    {
+      "title": "Software Test Automation Engineer",
+      "company": "EPAM Systems (Alert Innovation)",
+      "period": "Jan 2022 - May 2023",
+      "description": "Worked on Alphabot warehouse delivery robots project. Ported Python2 to Python3 wrappers, implemented custom client utilities for robot control, and developed test automation frameworks.",
+      "technologies": ["Azure Cosmos DB", "Ubuntu", "GitLab CI", "TestRail", "Python", "RTOS", "CAN", "Linux", "I2C/SMBus", "UART", "QNX"]
+    },
+    {
+      "title": "Software Test Automation Engineer",
+      "company": "EPAM Systems (Verizon Communications)",
+      "period": "Jun 2021 - Dec 2021",
+      "description": "Performed functional testing for embedded lighting control devices and Quectel modem firmware. Contributed to test automation framework development using Pytest.",
+      "technologies": ["Redis", "KISS Database", "LWM2M", "LTE", "UART", "GPS", "Pytest"]
+    },
+    {
+      "title": "Student/Trainee",
+      "company": "EPAM Systems (Liberty Global Services)",
+      "period": "Mar 2021 - May 2021",
+      "description": "Worked on Disaster Recovery design and implementation. Created AWS instances using Terraform and performed E2E testing of video streaming applications.",
+      "technologies": ["Python", "Pytest", "Testinfra", "REST API", "Terraform", "AWS EC2"]
     }
   ],
   "skills": [
@@ -49,21 +77,54 @@
       "items": ["Python", "Java", "Bash"]
     },
     {
-      "category": "Frameworks & Libraries",
-      "items": ["FastAPI", "Selenium", "Playwright", "Spring Boot", "Pytest", "Robot Framework", "SQLAlchemy", "Alembic", "Pydantic", "Pandas"]
+      "category": "Testing Frameworks & Tools",
+      "items": ["Pytest", "Robot Framework", "Selenium", "Playwright", "Python unittest", "Testinfra"]
     },
     {
-      "category": "Tools & Technologies",
-      "items": ["Git", "Docker", "AWS", "Postman", "Github Actions", "PostgreSQL"]
+      "category": "Databases & Data",
+      "items": ["PostgreSQL", "SQLite", "MongoDB", "AWS DynamoDB", "Azure Cosmos DB", "SQLAlchemy"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "items": ["AWS", "Docker", "Jenkins", "GitLab CI", "Terraform", "CI/CD"]
+    },
+    {
+      "category": "IoT & Embedded",
+      "items": ["Raspberry Pi", "GPIO", "I2C/SMBus", "UART", "CAN", "Hardware Buses", "Embedded Testing"]
+    },
+    {
+      "category": "Protocols & Networks",
+      "items": ["TCP", "UDP", "LWM2M", "CoAP", "REST API", "HTTPS"]
+    },
+    {
+      "category": "Tools & Platforms",
+      "items": ["Git", "GitHub", "GitLab", "Jira", "Postman", "Wireshark", "qTest", "TestRail"]
+    },
+    {
+      "category": "Operating Systems",
+      "items": ["Linux", "Ubuntu", "Windows", "QNX", "RTOS"]
     }
   ],
   "projects": [
     {
-      "title": "Project Name",
-      "description": "Brief description of the project",
-      "technologies": ["Tech 1", "Tech 2"],
-      "link": "https://github.com/username/project",
-      "image": "path/to/image.jpg"
+      "title": "Python KISS DB Implementation",
+      "description": "Created a Python implementation of KISS database system for embedded applications.",
+      "technologies": ["Python", "Database Design", "Embedded Systems"]
+    },
+    {
+      "title": "Robot Command & Control Utility",
+      "description": "Implemented custom client utility for commanding and controlling warehouse delivery robots.",
+      "technologies": ["Python", "Robotics", "Network Protocols"]
+    },
+    {
+      "title": "Hawkbit Protocol Client",
+      "description": "Developed custom client to support communication over Hawkbit protocol for IoT device management.",
+      "technologies": ["Python", "IoT", "Hawkbit", "Device Management"]
+    },
+    {
+      "title": "Healthcare Robot Framework Library",
+      "description": "Created custom Robot Framework library for healthcare enrollment management application testing.",
+      "technologies": ["Robot Framework", "Python", "Healthcare", "Test Automation"]
     }
   ]
 } 
