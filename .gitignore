@@ -8,4 +8,5 @@ vendor/
 .venv/
 __pycache__/
 favicon-generator.html
-*.py
+# Allow specific Python files
+!generate_professional_cv.py
