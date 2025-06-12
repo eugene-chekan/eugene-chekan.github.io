@@ -107,6 +107,11 @@
   ],
   "projects": [
     {
+      "title": "Backend for 'idre.me' dream-analysis web app.",
+      "description": "Developed a backend for 'idre.me' dream-analysis web app. The app allows users to analyze their dreams and get insights into their subconscious.",
+      "technologies": ["Python", "FastAPI", "MySQL", "SQLite", "SQLAlchemy", "Alembic", "Apache Web Server"]
+    },
+    {
       "title": "Python KISS DB Implementation",
       "description": "Created a Python implementation of KISS database system for embedded applications.",
       "technologies": ["Python", "Database Design", "Embedded Systems"]
