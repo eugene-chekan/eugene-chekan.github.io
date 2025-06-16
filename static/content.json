@@ -78,7 +78,7 @@
     },
     {
       "category": "Testing Frameworks & Tools",
-      "items": ["Pytest", "Robot Framework", "Selenium", "Playwright", "Python unittest", "Testinfra"]
+      "items": ["Pytest", "Robot Framework", "Selenium", "Playwright", "Python unittest", "Testinfra", "qTest", "TestRail"]
     },
     {
       "category": "Databases & Data",
@@ -98,7 +98,7 @@
     },
     {
       "category": "Tools & Platforms",
-      "items": ["Git", "GitHub", "GitLab", "Jira", "Postman", "Wireshark", "qTest", "TestRail"]
+      "items": ["Git", "GitHub", "GitLab", "Jira", "Postman", "Wireshark", "LangChain"]
     },
     {
       "category": "Operating Systems",
@@ -109,7 +109,7 @@
     {
       "title": "Backend for 'idre.me' dream-analysis web app.",
       "description": "Developed a backend for 'idre.me' dream-analysis web app. The app allows users to analyze their dreams and get insights into their subconscious.",
-      "technologies": ["Python", "FastAPI", "MySQL", "SQLite", "SQLAlchemy", "Alembic", "Apache Web Server"]
+      "technologies": ["Python", "FastAPI", "MySQL", "SQLite", "SQLAlchemy", "Alembic", "Apache Web Server", "LangChain"]
     },
     {
       "title": "Python KISS DB Implementation",
